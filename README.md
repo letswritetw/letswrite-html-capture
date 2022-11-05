@@ -2,4 +2,4 @@
 
 Demo：[demo](https://letswritetw.github.io/letswrite-html-capture/)
 
-<!-- 筆記文：[Let's Write](https://www.letswrite.tw/XXX/) -->
+筆記文：[Let's Write](https://www.letswrite.tw/html-capture/)
