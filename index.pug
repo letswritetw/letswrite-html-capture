@@ -1,0 +1,134 @@
+- var link = 'html-capture'
+- var title = '用 HTML 的 capture 屬性，開啟手機鏡頭進行拍照、錄影'
+- var description = '用 HTML 的 capture 屬性，開啟手機鏡頭進行拍照、錄影'
+
+<!DOCTYPE html>
+html(lang="zh-Hant")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{title} - August - Let's Write
+
+    link(rel="canonical", href=`https://www.letswrite.tw/${link}/`)
+    meta(property="og:url", content=`https://letswritetw.github.io/letswrite-${link}/`)
+
+    meta(property="fb:app_id", content="911000986339138")
+    meta(property="og:type", content="website")
+
+    meta(property="og:site_name", content="Let's Write")
+    meta(property="og:title", content=`${title} - Augustus - Let's Write`)
+    meta(itemprop="name", content=`${title} - Augustus - Let's Write`)
+
+    meta(name="description", content=description)
+    meta(property="og:description", content=description)
+    meta(itemprop="description", content=description)
+
+    meta(itemprop="image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
+    meta(property="og:image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
+    meta(property="og:image:width", content="1200")
+    meta(property="og:image:height", content="630")
+    meta(property="og:image:alt", content=title)
+
+    link(rel="shortcut icon", href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png")
+
+    //- css
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css", media="screen")
+    link(rel="stylesheet", href="dist/style.min.css", media="screen")
+
+    // Google Tag Manager
+    script.
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+  body
+
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT", height="0", width="0", style="display:none;visibility:hidden")
+    
+    #app.container
+      .text-center
+        h1  用 HTML 的 capture 屬性<br/>開啟手機鏡頭進行拍照、錄影
+
+      h2 屬性說明
+      h3 capture
+      p
+        code user
+        |  前鏡頭、
+        code environment
+        |  後鏡頭。
+      h3 accept
+      p
+        code audio
+        |  聲音檔、
+        code video
+        |  影片檔、
+        code image
+        |  圖檔。
+      
+      hr
+      
+      h2 範例
+
+      h3
+        label(for='soundUserFile') 1. 開前鏡頭錄製聲音
+      pre
+        code type="file" capture="user" accept="audio/*"
+      p
+        input#soundUserFile(type='file', capture='user', accept='audio/*')
+      p 顯示結果
+      textarea#soundUserFileResult(disabled)
+
+      h3
+        label(for='videoUserFile') 2. 開前鏡頭錄製影片
+      pre
+        code capture='user', accept='video/*'
+      p
+        input#videoUserFile(type='file', capture='user', accept='video/*')
+      p 顯示結果
+      textarea#videoUserFileResult(disabled)
+
+      h3
+        label(for='imageUserFile') 3. 開前鏡頭自拍
+      pre
+        code capture='user', accept='image/*'
+      p
+        input#imageUserFile(type='file', capture='user', accept='image/*')
+      p 顯示結果
+      textarea#imageUserFileResult(disabled)
+
+      h3
+        label(for='videoEnvFile') 4. 開後鏡頭錄製影片
+      pre
+        code capture='environment', accept='video/*'
+      p
+        input#videoEnvFile(type='file', capture='environment', accept='video/*')
+      p 顯示結果
+      textarea#videoEnvFileResult(disabled)
+      video#videoEnvFileVideo.hidden(controls)
+
+      h3
+        label(for='imageEnvFile') 5. 開後鏡頭拍照
+      pre
+        code capture='environment', accept='image/*'
+      p
+        input#imageEnvFile(type='file', capture='environment', accept='image/*')
+      p 顯示結果
+      p#imageEnvFileResult
+      img#imageEnvFileImage
+      
+      hr
+
+      h2 參考資源
+      p
+        a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture", target="_blank") HTML attribute: capture
+      p
+        a(href="https://austingil.com/html-capture-attribute/", target="_blank") You Can Access A User’s Camera with Just HTML
+
+      hr
+
+    script(src="https://cdn.jsdelivr.net/npm/vue@2")
+    script(src="dist/main.min.js")
