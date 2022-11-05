@@ -39,9 +39,9 @@ function handleFilesVideo(e) {
   reader.readAsArrayBuffer(fileData[0]);
   reader.addEventListener('load', file => {
 
-    let buffer = file.target.result;
-    let videoBlob = new Blob([new Uint8Array(buffer)], { type: 'video/mp4' });
-    let url = window.URL.createObjectURL(videoBlob);
+    const buffer = file.target.result;
+    const videoBlob = new Blob([new Uint8Array(buffer)], { type: 'video/mp4' });
+    const url = window.URL.createObjectURL(videoBlob);
 
     const video = document.getElementById(e.target.id + 'Video');
     video.src = url;
