@@ -1,3 +1,7 @@
+:root
+	--links: #42A6F7
+	--focus: #167FFF
+
 *, *::before, *::after
 	box-sizing: border-box
 
@@ -19,11 +23,34 @@ body
 button
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "微軟正黑體", "Microsoft JhengHei"
 
+textarea:disabled
+	opacity: 1
+
 .js-append-links a
 	color: #FFF !important
 
 .hidden
 	display: none
 
-.text-center
+.title
 	text-align: center
+	span
+		display: none
+	@media screen and (max-width: 1024px)
+		text-align: left
+		span
+			display: inline
+		br
+			display: none
+
+label
+	appearance: none
+	padding: .5rem 2rem
+	border: 1px solid var(--links)
+	border-radius: .375rem
+	color: var(--links)
+	cursor: pointer
+	&:hover
+		background-color: var(--focus)
+		border-color: var(--focus)
+		color: #ffffff

@@ -50,75 +50,85 @@ html(lang="zh-Hant")
       iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT", height="0", width="0", style="display:none;visibility:hidden")
     
     #app.container
-      .text-center
-        h1  用 HTML 的 capture 屬性<br/>開啟手機鏡頭進行拍照、錄影
+      .title
+        h1 用 HTML 的 capture 屬性
+          span ，
+          <br/>開啟手機鏡頭進行拍照、錄影
+        p 筆記文：
+          a(href="https://www.letswrite/html-capture/") Let's Write
+
+      hr
 
       h2 屬性說明
       h3 capture
-      p
-        code user
-        |  前鏡頭、
-        code environment
-        |  後鏡頭。
+      ul
+        li
+          code user
+          |  前鏡頭
+        li
+          code environment
+          |  後鏡頭
       h3 accept
-      p
-        code audio
-        |  聲音檔、
-        code video
-        |  影片檔、
-        code image
-        |  圖檔。
+      ul
+        li
+          code audio
+          |  聲音檔
+        li
+          code video
+          |  影片檔
+        li
+          code image
+          |  圖檔
       
       hr
       
       h2 範例
 
-      h3
-        label(for='soundUserFile') 1. 開前鏡頭錄製聲音
+      h3 1. 前鏡頭 - 錄製影片
       pre
-        code type="file" capture="user" accept="audio/*"
+        code capture="user", accept="video/*"
       p
-        input#soundUserFile(type='file', capture='user', accept='audio/*')
-      p 顯示結果
-      textarea#soundUserFileResult(disabled)
+        label(for="videoUserFile") 開啟前鏡頭錄影
+        input#videoUserFile.hidden(type="file", capture="user", accept="video/*")
+      p 顯示結果：
+      textarea#videoUserFileResult.hidden(disabled)
+      video#videoUserFileVideo.hidden(controls)
 
-      h3
-        label(for='videoUserFile') 2. 開前鏡頭錄製影片
-      pre
-        code capture='user', accept='video/*'
-      p
-        input#videoUserFile(type='file', capture='user', accept='video/*')
-      p 顯示結果
-      textarea#videoUserFileResult(disabled)
+      hr
 
-      h3
-        label(for='imageUserFile') 3. 開前鏡頭自拍
+      h3 2. 前鏡頭 - 拍照
       pre
-        code capture='user', accept='image/*'
+        code capture="user", accept="image/*"
       p
-        input#imageUserFile(type='file', capture='user', accept='image/*')
-      p 顯示結果
-      textarea#imageUserFileResult(disabled)
+        label(for="imageUserFile") 開啟前鏡頭拍照
+        input#imageUserFile.hidden(type="file", capture="user", accept="image/*")
+      p 顯示結果：
+      textarea#imageUserFileResult.hidden(disabled)
+      img#imageUserFileImage.hidden
 
-      h3
-        label(for='videoEnvFile') 4. 開後鏡頭錄製影片
+      hr
+
+      h3 3. 後鏡頭 - 錄製影片
       pre
-        code capture='environment', accept='video/*'
+        code capture="environment", accept="video/*"
       p
-        input#videoEnvFile(type='file', capture='environment', accept='video/*')
-      p 顯示結果
-      textarea#videoEnvFileResult(disabled)
+        label(for="videoEnvFile") 開起後鏡頭錄影
+        input#videoEnvFile.hidden(type="file", capture="environment", accept="video/*")
+      p 顯示結果：
+      textarea#videoEnvFileResult.hidden(disabled)
       video#videoEnvFileVideo.hidden(controls)
 
-      h3
-        label(for='imageEnvFile') 5. 開後鏡頭拍照
+      hr
+
+      h3 4. 後鏡頭 - 拍照
       pre
-        code capture='environment', accept='image/*'
+        code capture="environment", accept="image/*"
       p
-        input#imageEnvFile(type='file', capture='environment', accept='image/*')
-      p 顯示結果
-      p#imageEnvFileResult
-      img#imageEnvFileImage
+        label(for="imageEnvFile") 開起後鏡頭拍照
+        input#imageEnvFile.hidden(type="file", capture="environment", accept="image/*")
+      p 顯示結果：
+      textarea#imageEnvFileResult.hidden(disabled)
+      img#imageEnvFileImage.hidden
       
       hr
 

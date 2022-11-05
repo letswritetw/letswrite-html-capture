@@ -38,62 +38,62 @@
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <div class="container" id="app">
-      <div class="text-center">
-        <h1> 用 HTML 的 capture 屬性<br/>開啟手機鏡頭進行拍照、錄影</h1>
+      <div class="title">
+        <h1>用 HTML 的 capture 屬性<span>，</span><br/>開啟手機鏡頭進行拍照、錄影</h1>
+        <p>筆記文：<a href="https://www.letswrite/html-capture/">Let's Write</a></p>
       </div>
+      <hr/>
       <h2>屬性說明</h2>
       <h3>capture</h3>
-      <p><code>user</code> 前鏡頭、<code>environment</code> 後鏡頭。</p>
+      <ul>
+        <li><code>user</code> 前鏡頭</li>
+        <li><code>environment</code> 後鏡頭</li>
+      </ul>
       <h3>accept</h3>
-      <p><code>audio</code> 聲音檔、<code>video</code> 影片檔、<code>image</code> 圖檔。</p>
+      <ul>
+        <li><code>audio</code> 聲音檔</li>
+        <li><code>video</code> 影片檔</li>
+        <li><code>image</code> 圖檔</li>
+      </ul>
       <hr/>
       <h2>範例</h2>
-      <h3>
-        <label for="soundUserFile">1. 開前鏡頭錄製聲音</label>
-      </h3>
-      <pre><code>type="file" capture="user" accept="audio/*"</code></pre>
+      <h3>1. 前鏡頭 - 錄製影片</h3>
+      <pre><code>capture="user", accept="video/*"</code></pre>
       <p>
-        <input id="soundUserFile" type="file" capture="user" accept="audio/*"/>
+        <label for="videoUserFile">開啟前鏡頭錄影</label>
+        <input class="hidden" id="videoUserFile" type="file" capture="user" accept="video/*"/>
       </p>
-      <p>顯示結果</p>
-      <textarea id="soundUserFileResult" disabled="disabled"></textarea>
-      <h3>
-        <label for="videoUserFile">2. 開前鏡頭錄製影片</label>
-      </h3>
-      <pre><code>capture='user', accept='video/*'</code></pre>
+      <p>顯示結果：</p>
+      <textarea class="hidden" id="videoUserFileResult" disabled="disabled"></textarea>
+      <video class="hidden" id="videoUserFileVideo" controls="controls"></video>
+      <hr/>
+      <h3>2. 前鏡頭 - 拍照</h3>
+      <pre><code>capture="user", accept="image/*"</code></pre>
       <p>
-        <input id="videoUserFile" type="file" capture="user" accept="video/*"/>
+        <label for="imageUserFile">開啟前鏡頭拍照</label>
+        <input class="hidden" id="imageUserFile" type="file" capture="user" accept="image/*"/>
       </p>
-      <p>顯示結果</p>
-      <textarea id="videoUserFileResult" disabled="disabled"></textarea>
-      <h3>
-        <label for="imageUserFile">3. 開前鏡頭自拍</label>
-      </h3>
-      <pre><code>capture='user', accept='image/*'</code></pre>
+      <p>顯示結果：</p>
+      <textarea class="hidden" id="imageUserFileResult" disabled="disabled"></textarea><img class="hidden" id="imageUserFileImage"/>
+      <hr/>
+      <h3>3. 後鏡頭 - 錄製影片</h3>
+      <pre><code>capture="environment", accept="video/*"</code></pre>
       <p>
-        <input id="imageUserFile" type="file" capture="user" accept="image/*"/>
+        <label for="videoEnvFile">開起後鏡頭錄影</label>
+        <input class="hidden" id="videoEnvFile" type="file" capture="environment" accept="video/*"/>
       </p>
-      <p>顯示結果</p>
-      <textarea id="imageUserFileResult" disabled="disabled"></textarea>
-      <h3>
-        <label for="videoEnvFile">4. 開後鏡頭錄製影片</label>
-      </h3>
-      <pre><code>capture='environment', accept='video/*'</code></pre>
-      <p>
-        <input id="videoEnvFile" type="file" capture="environment" accept="video/*"/>
-      </p>
-      <p>顯示結果</p>
-      <textarea id="videoEnvFileResult" disabled="disabled"></textarea>
+      <p>顯示結果：</p>
+      <textarea class="hidden" id="videoEnvFileResult" disabled="disabled"></textarea>
       <video class="hidden" id="videoEnvFileVideo" controls="controls"></video>
-      <h3>
-        <label for="imageEnvFile">5. 開後鏡頭拍照</label>
-      </h3>
-      <pre><code>capture='environment', accept='image/*'</code></pre>
+      <hr/>
+      <h3>4. 後鏡頭 - 拍照</h3>
+      <pre><code>capture="environment", accept="image/*"</code></pre>
       <p>
-        <input id="imageEnvFile" type="file" capture="environment" accept="image/*"/>
+        <label for="imageEnvFile">開起後鏡頭拍照</label>
+        <input class="hidden" id="imageEnvFile" type="file" capture="environment" accept="image/*"/>
       </p>
-      <p>顯示結果</p>
-      <p id="imageEnvFileResult"></p><img id="imageEnvFileImage"/>
+      <p>顯示結果：</p>
+      <textarea class="hidden" id="imageEnvFileResult" disabled="disabled"></textarea><img class="hidden" id="imageEnvFileImage"/>
       <hr/>
       <h2>參考資源</h2>
       <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture" target="_blank">HTML attribute: capture</a></p>
